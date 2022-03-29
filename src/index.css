@@ -39,9 +39,6 @@ body {
   margin: 5px auto;
   overflow: auto;
   min-height: 300px;
-  border: 1px solid steelblue;
-
-  border-radius: 1px;
   align-items: 'flex-start'; /* // if you want to fill rows left to right */
 }
 
@@ -86,8 +83,19 @@ body {
   cursor: pointer;
 }
 
+.people {
+  background: #f4f4f4;
+  margin: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
 .task.reminder {
   border-left: 5px solid green;
+}
+
+.people.reminder {
+  border-left: 5px solid blue;
 }
 
 .task h3 {
