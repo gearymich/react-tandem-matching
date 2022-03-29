@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import Header from './components/Header'
-import Tasks from './components/Tasks'
-import AddTask from './components/AddTask'
+import Tasks from './components/tasks/Tasks'
+import AddTask from './components/tasks/AddTask'
 
 function App() {
   const [showAddTask, setShowAddTask] = useState(false)
@@ -87,7 +87,7 @@ function App() {
       {showAddTask && 
         <AddTask onAdd={addTask} /> // short version of ternary
       }
-      
+
       <div className='body'>
         <div className="column">
           {tasks.length > 0 ? (
