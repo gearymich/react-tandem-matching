@@ -7,11 +7,12 @@ const People = ({ people, onDelete, onToggle }) => {
 
       <h3>
         {people.text} {' '}
-        <FaTimes style={{ color: 'red', cursor: 'pointer'}}
-          onClick={ () => onDelete(people.id) } />
+        {/* <FaTimes style={{ color: 'red', cursor: 'pointer'}}
+          onClick={ () => onDelete(people.id) } /> */}
       </h3>
       
-      <p>{people.day}</p>
+      <p>Registered: {people.day}</p>
+      <p>Age: {people.age} <br/> Hobbies: {people.hobby}</p>
 
     </div>
   )

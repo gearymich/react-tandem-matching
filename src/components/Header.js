@@ -4,14 +4,19 @@ const onClick = () => {
   console.log('click')
 }
 
-const Header = ({ title, onAdd, showAdd }) => {
+const Header = ({ title, onAdd, showAdd, onPair }) => {
   return (
     <header className='header'>
       <h1> {title} </h1>
-      <Button 
+      {/* <Button 
         color={showAdd ? 'red' : 'green'} 
-        text={showAdd ? 'Close' : 'Add'}
-        onClick={ onAdd }/>
+        text={showAdd ? 'Close' : 'Add Newcomer'}
+        onClick={ onAdd }/> */}
+
+      <Button 
+        color='steelblue'
+        text='Match Pair'
+        onClick={ onPair }/>
     </header>
   )
 }
