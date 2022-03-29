@@ -61,7 +61,7 @@ function App() {
     {
       id: 5,
       text: 'Joe L.',
-      day: '9.30.19',
+      day: '30.9.19',
       age: '38 yrs',
       hobby: 'Drawing',
       reminder: true,
@@ -69,7 +69,7 @@ function App() {
     {
       id: 6,
       text: 'Jane A.',
-      day: '1.14.18',
+      day: '14.1.18',
       age: '33 yrs',
       hobby: 'Hiking',
       reminder: false,
@@ -77,7 +77,7 @@ function App() {
     {
       id: 7,
       text: 'Alex E.',
-      day: '2.15.21',
+      day: '15.2.21',
       age: '28 yrs',
       hobby: 'Traveling',
       reminder: false,
@@ -85,7 +85,7 @@ function App() {
     {
       id: 8,
       text: 'Henry P.',
-      day: '9.30.22',
+      day: '30.9.22',
       age: '25 yrs',
       hobby: 'Hiking',
       reminder: false,
@@ -158,7 +158,7 @@ function App() {
 
   return (
     <div className="container">
-      <Header title='PoC - Matching (3.29.22)'
+      <Header title='PoC - Matching (29.3.22)'
         onAdd={() => setShowAddTask(!showAddTask)}
 
         showAdd={ showAddTask } 
