@@ -104,8 +104,19 @@ function App() {
         (people) => people.reminder === false))
       }
   }
-  
 
+    // // Toggle Delete (Tasks)
+    // const toggleDelete = (id) => {
+    //   setTasks(
+    //     tasks.map((task) => 
+    //       task.id === id ? 
+    //       { ...task, toDelete: false }
+    //       : { ...task, toDelete: true }
+    //     )
+    //   )
+    // }
+
+    
   // Toggle Reminder (Tasks)
   const toggleReminder = (id) => {
     setTasks(
