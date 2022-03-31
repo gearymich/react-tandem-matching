@@ -1,18 +1,15 @@
 import { ImCheckboxChecked, ImCheckboxUnchecked } from 'react-icons/im'
-import React, { useState } from 'react';
 
-function Checkbox() {
-    const [check_, setCheck] = useState(false);
+function Checkbox({id, toggle, onToggle}) {
 
     return (<> 
-        {check_ ?
+        {!toggle ?
         <ImCheckboxUnchecked style={{ color: 'black', cursor: 'pointer' }}
-        onClick={() => { setCheck(!check_);}
+        onClick={() => { onToggle(id);}
         } />
-
         :
         <ImCheckboxChecked style={{ color: 'black', cursor: 'pointer' }}
-            onClick={() => { setCheck(!check_);} 
+            onClick={() => { onToggle(id);} 
         } />
         }
         </>

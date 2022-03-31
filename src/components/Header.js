@@ -1,4 +1,4 @@
-import Button from './Button'
+import Button from './iteractive/Button'
 
 const onClick = () => {
   console.log('click')
