@@ -3,7 +3,7 @@ import Checkbox from '../iteractive/Checkbox'
 
 const People = ({ people, onDelete, onToggle }) => {
   return (
-    <div className='task' /* template literal*/>
+    <div className='token' /* template literal*/>
 
       <h3>
         {people.text} {' '}
