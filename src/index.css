@@ -92,8 +92,8 @@ body {
 }
 
 .tleft, .tright {
-  display: inline-block;
-  clear: 'both';
+  display: inline-flex;
+  flex-direction: column;
   width: 50%; /* change width of each one to determine the width gap */
   
   
