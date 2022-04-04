@@ -2,11 +2,9 @@ import { useState } from 'react'
 import Header from './components/Header'
 import Tasks from './components/tasks/Tasks'
 import AddTask from './components/tasks/AddTask'
-
 import Peoples from './components/people/Peoples'
 
 function App() {
-  const [showAddTask, setShowAddTask] = useState(false)
   const [tasks, setTasks] = useState([
   {
     id: 1,
@@ -104,18 +102,6 @@ function App() {
         (people) => people.reminder === false))
       }
   }
-
-    // // Toggle Delete (Tasks)
-    // const toggleDelete = (id) => {
-    //   setTasks(
-    //     tasks.map((task) => 
-    //       task.id === id ? 
-    //       { ...task, toDelete: false }
-    //       : { ...task, toDelete: true }
-    //     )
-    //   )
-    // }
-
     
   // Toggle Reminder (Tasks)
   const toggleReminder = (id) => {
@@ -140,15 +126,6 @@ function App() {
     }
 
 
-  // Add Task
-  const addTask = (task) => {
-    const id = Math.floor(Math.random() * 10000) + 1
-    const newTask = {id, ...task }
-    setTasks([...tasks, newTask])
-    console.log(newTask);
-  }
-  
-
   // Delete (Task)
   const deleteTask = (id) => {
     console.log('delete', id)
@@ -169,21 +146,13 @@ function App() {
 
   return (
     <div className="container">
-      <Header title='PoC - Matching (29.3.22)'
-        onAdd={() => setShowAddTask(!showAddTask)}
-
-        showAdd={ showAddTask } 
-
+      <Header title='PoC - Matching (4.4.22)'
         onPair={matchPair}
       />
 
-      {showAddTask && 
-        <AddTask onAdd={addTask} /> // short version of ternary
-      }
-
       <div className='body'>
 
-        <div className="column">
+        <div className="column" style={{width: '49%'}}>
           <h3 style = {{textAlign: 'center'}}>Newcomers</h3>
           {tasks.length > 0 ? (
             <Tasks tasks={tasks} 
@@ -194,7 +163,9 @@ function App() {
           )}
         </div>
 
-        <div className="column">
+        <div className="column" style={{width: '1%', background: '#F397AF'}}></div>
+
+        <div className="column" style={{width: '49%'}}>
           <h3 style = {{textAlign: 'center'}} >Oldtimers</h3>
           {peoples.length > 0 ? (
             <Peoples peoples={peoples} 
@@ -204,7 +175,6 @@ function App() {
             'No Peoples To Show'
           )}
         </div>
-
       </div>
     </div>
   );
