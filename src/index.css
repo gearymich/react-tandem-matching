@@ -23,11 +23,10 @@ body {
 
 .body {
   max-width: 1600px;
-  margin: 30px auto;
+  margin: 0px auto;
   overflow: auto;
   min-height: 300px;
-  border: 1px solid black;
-  padding: 30px;
+  padding: 0px;
   border-radius: 5px;
   display: flex;
   flex-direction: row;
@@ -46,6 +45,12 @@ body {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
+}
+
+.nfilters {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .btn {

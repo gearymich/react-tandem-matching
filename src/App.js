@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import Header from './components/Header'
+import NameFilters from './components/NameFilters'
 import Tasks from './components/tasks/Tasks'
 import AddTask from './components/tasks/AddTask'
 import Peoples from './components/people/Peoples'
@@ -146,14 +147,13 @@ function App() {
 
   return (
     <div className="container">
-      <Header title='PoC - Matching (4.4.22)'
-        onPair={matchPair}
-      />
-
+      <Header title='PoC - Matching (4.4.22)'/>
+    
+      <NameFilters onPair={matchPair}/>
       <div className='body'>
-
-        <div className="column" style={{width: '49%'}}>
-          <h3 style = {{textAlign: 'center'}}>Newcomers</h3>
+      
+        <div className="column" style={{width: '49.5%'}}>
+          {/* <h3 style = {{textAlign: 'center'}}>Newcomers</h3> */}
           {tasks.length > 0 ? (
             <Tasks tasks={tasks} 
             onDelete={deleteTask}
@@ -165,8 +165,8 @@ function App() {
 
         <div className="column" style={{width: '1%', background: '#F397AF'}}></div>
 
-        <div className="column" style={{width: '49%'}}>
-          <h3 style = {{textAlign: 'center'}} >Oldtimers</h3>
+        <div className="column" style={{width: '49.5%'}}>
+          {/* <h3 style = {{textAlign: 'center'}} >Oldtimers</h3> */}
           {peoples.length > 0 ? (
             <Peoples peoples={peoples} 
             onDelete={deletePpl}

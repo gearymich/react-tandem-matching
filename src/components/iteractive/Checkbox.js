@@ -4,11 +4,11 @@ function Checkbox({id, toggle, onToggle}) {
 
     return (<> 
         {!toggle ?
-        <ImCheckboxUnchecked style={{ color: 'black', cursor: 'pointer',  }}
+        <ImCheckboxUnchecked style={{ color: 'black', cursor: 'pointer', fontSize:25  }}
         onClick={() => { onToggle(id);}
         } />
         :
-        <ImCheckboxChecked style={{ color: 'black', cursor: 'pointer' }}
+        <ImCheckboxChecked style={{ color: 'black', cursor: 'pointer', fontSize:25 }}
             onClick={() => { onToggle(id);} 
         } />
         }
