@@ -1,9 +1,10 @@
 import { useState } from 'react'
 import Header from './components/Header'
-import NameFilters from './components/NameFilters'
+import FilterHeader from './components/filter/FilterHeader'
 import Tasks from './components/tasks/Tasks'
 import AddTask from './components/tasks/AddTask'
 import Peoples from './components/people/Peoples'
+
 
 function App() {
   const [tasks, setTasks] = useState([
@@ -149,9 +150,9 @@ function App() {
     <div className="container">
       <Header title='PoC - Matching (4.4.22)'/>
     
-      <NameFilters onPair={matchPair}/>
+      <FilterHeader onPair={matchPair} newLength={tasks.length} oldLength={peoples.length}/>
+
       <div className='body'>
-      
         <div className="column" style={{width: '49.5%'}}>
           {/* <h3 style = {{textAlign: 'center'}}>Newcomers</h3> */}
           {tasks.length > 0 ? (

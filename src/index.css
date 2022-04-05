@@ -53,6 +53,16 @@ body {
   align-items: center;
 }
 
+.afilter  {
+  background: '#E72658';
+  color: 'white';
+}
+
+.afilter h3 {
+  background-color: '#E72658';
+  color: 'white';
+}
+
 .btn {
   display: inline-block;
   background: #000;
