@@ -18,9 +18,9 @@ const People = ({ people, onDelete, onToggle }) => {
         <p style={{color: 'white'}}>Hobbies: {people.hobby}</p>
         {!btnText &&  // short version of ternary
         <> 
-          <p style={{color: 'white'}}>Thing 1: {people.hobby}</p>
-          <p style={{color: 'white'}}>Thing 2: {people.hobby}</p>
-          <p style={{color: 'white'}}>Thing 3: {people.hobby}</p>
+          <p style={{color: 'white'}}>Family: {people.family}</p>
+          <p style={{color: 'white'}}>Address: {people.address}</p>
+          <p style={{color: 'white'}}>Availability: {people.available}</p>
         </>
          
       }

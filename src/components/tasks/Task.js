@@ -17,9 +17,9 @@ const Task = ({ task, onDelete, onToggle }) => {
         <p style={{color: 'white'}}>Hobbies: {task.hobby}</p>
         {!btnText &&  // short version of ternary
         <> 
-          <p style={{color: 'white'}}>Thing 1: {task.hobby}</p>
-          <p style={{color: 'white'}}>Thing 2: {task.hobby}</p>
-          <p style={{color: 'white'}}>Thing 3: {task.hobby}</p>
+          <p style={{color: 'white'}}>Family: {task.family}</p>
+          <p style={{color: 'white'}}>Address: {task.address}</p>
+          <p style={{color: 'white'}}>Availability: {task.available}</p>
         </>
          
       }

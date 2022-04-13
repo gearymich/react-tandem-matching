@@ -56,7 +56,7 @@ export const menuItems = [
       title: "Match",
     },
     {
-      title: "OLDTIMERS",
+      title: "LOCALS",
       submenu: [
         {
           title: "Hobbies",

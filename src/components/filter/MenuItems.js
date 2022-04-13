@@ -49,7 +49,7 @@ const MenuItems = ({ items, depthLevel, onPair, newcomerLength, oldtimerLength }
             {items.title}
             {(depthLevel===0 && items.title==="NEWCOMERS")
               && " ("+newcomerLength+")"}
-            {(depthLevel===0 && items.title==="OLDTIMERS")
+            {(depthLevel===0 && items.title==="LOCALS")
               && " ("+oldtimerLength+")"}
 
             {" "}
