@@ -8,9 +8,14 @@ const FilterHeader = ({onPair, newLength, oldLength}) => {
         <ul className="menus">
           {menuItems.map((menu, index) => {
             const depthLevel = 0;
-            return <MenuItems items={menu} key={index} onPair = {onPair}
-            depthLevel={depthLevel} newcomerLength={newLength} oldtimerLength={oldLength} />;
-          })}
+            return <MenuItems 
+            items={menu} 
+            key={index} 
+            onPair = {onPair} // only for 'match' button
+            depthLevel={depthLevel}
+            newcomerLength={newLength}
+            oldtimerLength={oldLength}
+            />;})}
         </ul>
       </nav>
     )

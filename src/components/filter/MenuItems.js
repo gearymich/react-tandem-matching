@@ -1,26 +1,12 @@
 import { useState, useEffect, useRef } from "react";
-import Button from "../iteractive/Button"
+import filterLocals from "../people/filterPeople";
+import Button from "../iteractive/Button";
 import Dropdown from "./Dropdown";
 
 const MenuItems = ({ items, depthLevel, onPair, newcomerLength, oldtimerLength }) => {
+
   const [dropdown, setDropdown] = useState(false);
-
-  let ref = useRef();
-
-  useEffect(() => {
-    const handler = (event) => {
-      if (dropdown && ref.current && !ref.current.contains(event.target)) {
-        setDropdown(false);
-      }
-    };
-    document.addEventListener("mousedown", handler);
-    document.addEventListener("touchstart", handler);
-    return () => {
-      // Cleanup the event listener
-      document.removeEventListener("mousedown", handler);
-      document.removeEventListener("touchstart", handler);
-    };
-  }, [dropdown]);
+  const ref = useRef();
 
   const onMouseEnter = () => {
     window.innerWidth > 960 && setDropdown(true);
@@ -30,11 +16,15 @@ const MenuItems = ({ items, depthLevel, onPair, newcomerLength, oldtimerLength }
     window.innerWidth > 960 && setDropdown(false);
   };
 
+  // const filterNewcomers = (type, filter) => {
+  //   console.log(type + ":  " + filter);
+  // }
+
   return (
     
     <li
       className="menu-items"
-      ref={ref}
+      // ref={ref}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
     >
@@ -44,7 +34,6 @@ const MenuItems = ({ items, depthLevel, onPair, newcomerLength, oldtimerLength }
             type="button"
             aria-haspopup="menu"
             aria-expanded={dropdown ? "true" : "false"}
-            onClick={() => setDropdown((prev) => !prev)}
           >
             {items.title}
             {(depthLevel===0 && items.title==="NEWCOMERS")
@@ -71,7 +60,10 @@ const MenuItems = ({ items, depthLevel, onPair, newcomerLength, oldtimerLength }
           </>
           ) : ( 
           <> 
-          <button className="attr_btn">{items.title}</button>
+          <button onClick={ () => {
+            (items.ftype === "H") 
+              && filterLocals("H", "Hiking") ;
+            }}> {items.title} </button>
           </>
           )
         }

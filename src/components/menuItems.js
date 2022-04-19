@@ -41,12 +41,15 @@ export const menuItems = [
           submenu: [
             {
               title: "English",
+              ftype: "L",
             },
             {
               title: "German",
+              ftype: "L",
             },
             {
               title: "Arabic",
+              ftype: "L",
             },
           ],
         },
@@ -66,6 +69,7 @@ export const menuItems = [
             },
             {
               title: "Hiking",
+              ftype: "H",
             },
             {
               title: "Dancing",

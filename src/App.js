@@ -136,6 +136,8 @@ function App() {
         (people) => people.reminder === false))
       }
   }
+
+
     
   // Toggle Reminder (Tasks)
   const toggleReminder = (id) => {
@@ -185,7 +187,8 @@ function App() {
       <FilterHeader 
       onPair={matchPair} 
       newLength={tasks.length} 
-      oldLength={peoples.length}/>
+      oldLength={peoples.length}
+      />
 
       <div className='searchBoxes'>
         <Searchbar className='search'
