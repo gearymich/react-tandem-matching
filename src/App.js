@@ -2,8 +2,8 @@ import { useState } from 'react'
 import { createContext, useContext } from "react";
 import Header from './components/Header'
 import FilterHeader from './components/filter/FilterHeader'
-import Tasks from './components/tasks/Tasks'
-import Peoples from './components/people/Peoples'
+import Newcomers from './components/newcomers/Newcomers'
+import Locals from './components/locals/Locals'
 
 import { Searchbar } from 'react-native-paper';
 
@@ -11,18 +11,18 @@ function App() {
   const NEWCOMERS = require('./newcomers.json')
   const LOCALS = require('./locals.json')
 
-  const [tasks, setTasks] = useState(NEWCOMERS)
+  const [newcomers, setTasks] = useState(NEWCOMERS)
   const [peoples, setPeoples] = useState(LOCALS)
 
   // Match pair
   const matchPair = () => {
-    if(tasks.some(task => task.reminder === true)
+    if(newcomers.some(newcomer => newcomer.reminder === true)
       && peoples.some(people => people.reminder === true)) {      
         
-        setTasks(tasks.map((task) => 
-          (task.reminder === true) ?      
-          { ...task, matched : true, reminder: !task.reminder }
-          : { ...task, reminder: false }
+        setTasks(newcomers.map((newcomer) => 
+          (newcomer.reminder === true) ?      
+          { ...newcomer, matched : true, reminder: !newcomer.reminder }
+          : { ...newcomer, reminder: false }
         ))
 
         setPeoples(peoples.map((people) => 
@@ -36,9 +36,7 @@ function App() {
   //TEMP
   const [isFilterLocal, setIsFilterLocal] = useState(false);
   const [boldBtnLocal, setBoldBtnLocal] = useState(null);
-
   const filterLocal = (e, filterString) => {
-
     // if clicking into filter
     if(isFilterLocal) {
       e.target.style.color = 'black'
@@ -108,7 +106,6 @@ function App() {
   const [isFilterNewcomer, setIsFilterNewcomer] = useState(false);
   const [boldBtnNewcomer, setBoldBtnNewcomer] = useState(null);
   const filterNewcomer = (e, filterString) => {
-    
     // if clicking into filter
     if(isFilterNewcomer) {
       e.target.style.color = 'black'
@@ -127,14 +124,14 @@ function App() {
     const keyword = e.target.innerHTML;
 
     if (isFilterNewcomer && filterString === "N-H") {
-        setTasks(tasks.map((obj) => 
+        setTasks(newcomers.map((obj) => 
         (obj.hobby !== keyword) ?
         { ...obj, display : false }
         : {...obj, display : true }
         ))
 
     } else if (isFilterNewcomer && filterString === "N-L") {
-      setTasks(tasks.map((obj) => 
+      setTasks(newcomers.map((obj) => 
       (obj.language !== keyword) ?
       { ...obj, display : false }
       : {...obj, display : true }
@@ -143,21 +140,21 @@ function App() {
     } else if (isFilterNewcomer && filterString === "N-A") {
       switch(keyword) {
         case "&lt; 25":
-          setTasks(tasks.map((obj) => 
+          setTasks(newcomers.map((obj) => 
           (obj.age >= 25) ?
           { ...obj, display : false }
           : {...obj, display : true }
           ))
           break;
         case "25 - 35":
-          setTasks(tasks.map((obj) => 
+          setTasks(newcomers.map((obj) => 
           (obj.age < 25 || obj.age > 35) ?
           { ...obj, display : false }
           : {...obj, display : true }
           ))
           break;
         case "&gt; 35":
-          setTasks(tasks.map((obj) => 
+          setTasks(newcomers.map((obj) => 
           (obj.age <= 35) ?
           { ...obj, display : false }
           : {...obj, display : true }
@@ -169,7 +166,7 @@ function App() {
       }
 
     } else {
-      setTasks(tasks.map((obj) => 
+      setTasks(newcomers.map((obj) => 
       (true) &&
       { ...obj, display : true }
     ))
@@ -177,13 +174,13 @@ function App() {
   };
   //
 
-  // Toggle Reminder (Tasks)
+  // Toggle Reminder (Newcomers)
   const toggleReminder = (id) => {
     setTasks(
-      tasks.map((task) => 
-        task.id === id ? 
-        { ...task, reminder: !task.reminder }
-        : { ...task, reminder: false }
+      newcomers.map((newcomer) => 
+        newcomer.id === id ? 
+        { ...newcomer, reminder: !newcomer.reminder }
+        : { ...newcomer, reminder: false }
       )
     )
   }
@@ -205,7 +202,7 @@ function App() {
     
       <FilterHeader 
         onPair={matchPair} 
-        newLength={tasks.length} 
+        newLength={newcomers.length} 
         oldLength={peoples.length}
 
         // filtering
@@ -220,11 +217,11 @@ function App() {
 
       <div className='body'>
         <div className="column" style={{width: '49.5%'}}>
-          {tasks.length > 0 ? (
-            <Tasks tasks={tasks} 
+          {newcomers.length > 0 ? (
+            <Newcomers newcomers={newcomers} 
             onToggle={toggleReminder}/>
           ) : (
-            'No Tasks To Show'
+            'No Newcomers To Show'
           )}
         </div>
 
@@ -232,10 +229,10 @@ function App() {
 
         <div className="column" style={{width: '49.5%'}}>
           {peoples.length > 0 ? (
-            <Peoples peoples={peoples} 
+            <Locals peoples={peoples} 
             onToggle={toggleReminderPpl} />
           ) : (
-            'No Peoples To Show'
+            'No Locals To Show'
           )}
         </div>
       </div>

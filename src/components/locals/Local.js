@@ -3,7 +3,7 @@ import Checkbox from '../iteractive/Checkbox'
 import Button from '../iteractive/Button'
 import React, { useState } from 'react';
 
-const People = ({ people, onToggle }) => {
+const Local = ({ local, onToggle }) => {
   
   const [btnText, setBtnText] = useState(true);
 
@@ -11,16 +11,16 @@ const People = ({ people, onToggle }) => {
     <div className='token' /* template literal*/ > 
       <div className='tleft'>
         <h3 style={{color: 'white'}}>
-          {people.text} {' '}
+          {local.text} {' '}
         </h3>
-        <p>Language: {people.language}</p>
-        <p>Age: {people.age} yrs </p>
-        <p>Hobbies: {people.hobby}</p>
+        <p>Language: {local.language}</p>
+        <p>Age: {local.age} yrs </p>
+        <p>Hobbies: {local.hobby}</p>
         {!btnText &&  // short version of ternary
         <> 
-          <p>Family: {people.family}</p>
-          <p>Address: {people.address}</p>
-          <p>Availability: {people.available}</p>
+          <p>Family: {local.family}</p>
+          <p>Address: {local.address}</p>
+          <p>Availability: {local.available}</p>
         </>        
         }
       </div>
@@ -28,8 +28,8 @@ const People = ({ people, onToggle }) => {
       <div className='tright' >
         <div style={{verticalAlign: 'top'}}>   
           <Checkbox 
-            id={people.id}
-            toggle={people.reminder}
+            id={local.id}
+            toggle={local.reminder}
             onToggle={onToggle} />
         </div>
           
@@ -53,4 +53,4 @@ const People = ({ people, onToggle }) => {
   )
 }
 
-export default People
+export default Local

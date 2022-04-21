@@ -2,22 +2,22 @@ import Checkbox from '../iteractive/Checkbox'
 import Button from '../iteractive/Button'
 import React, { useState } from 'react';
 
-const Task = ({ task, onToggle }) => {
+const Newcomer = ({ newcomer, onToggle }) => {
   const [btnText, setBtnText] = useState(true);
 
   return (
     <div className='token' /* template literal*/ > 
       <div className='tleft'>
-        <h3 style={{color: 'white'}}>{task.text} {' '}</h3>
-        <p>Language: {task.language}</p>
-        <p>Age: {task.age} yrs</p>
-        <p>Hobbies: {task.hobby}</p>
+        <h3 style={{color: 'white'}}>{newcomer.text} {' '}</h3>
+        <p>Language: {newcomer.language}</p>
+        <p>Age: {newcomer.age} yrs</p>
+        <p>Hobbies: {newcomer.hobby}</p>
 
         {!btnText &&  // short version of ternary
           <> 
-            <p>Family: {task.family}</p>
-            <p>Address: {task.address}</p>
-            <p>Availability: {task.available}</p>
+            <p>Family: {newcomer.family}</p>
+            <p>Address: {newcomer.address}</p>
+            <p>Availability: {newcomer.available}</p>
           </>  
         }
       </div>
@@ -25,8 +25,8 @@ const Task = ({ task, onToggle }) => {
       <div className='tright' >
         <div style={{verticalAlign: 'top'}}>   
           <Checkbox 
-            id={task.id}
-            toggle={task.reminder}
+            id={newcomer.id}
+            toggle={newcomer.reminder}
             onToggle={onToggle} />
         </div>
           
@@ -53,4 +53,4 @@ const Task = ({ task, onToggle }) => {
   )
 }
 
-export default Task
+export default Newcomer
