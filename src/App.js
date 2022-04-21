@@ -34,28 +34,42 @@ function App() {
   }
 
   //TEMP
-  const [isFilter, setIsFilter] = useState(false);
+  const [isFilterLocal, setIsFilterLocal] = useState(false);
+  const [boldBtnLocal, setBoldBtnLocal] = useState(null);
 
   const filterLocal = (e, filterString) => {
-    setIsFilter(!isFilter);
+
+    // if clicking into filter
+    if(isFilterLocal) {
+      e.target.style.color = 'black'
+      e.target.style.fontWeight = 'bold'
+      setBoldBtnLocal(e.target);
+
+    } else if (boldBtnLocal !==null) {
+      boldBtnLocal.style.color = 'white'
+      boldBtnLocal.style.fontWeight = 'normal'
+      setBoldBtnLocal(null);
+    }
+
+    setIsFilterLocal(!isFilterLocal);
     const keyword = e.target.innerHTML;
 
     console.log('click');
-    if (isFilter && filterString === "L-H") {
+    if (isFilterLocal && filterString === "L-H") {
         setPeoples(peoples.map((obj) => 
         (obj.hobby !== keyword) ?
         { ...obj, display : false }
         : {...obj, display : true }
         ))
 
-    } else if (isFilter && filterString === "L-L") {
+    } else if (isFilterLocal && filterString === "L-L") {
       setPeoples(peoples.map((obj) => 
       (obj.language !== keyword) ?
       { ...obj, display : false }
       : {...obj, display : true }
       ))
   
-    } else if (isFilter && filterString === "L-A") {
+    } else if (isFilterLocal && filterString === "L-A") {
       switch(keyword) {
         case "&lt; 25":
           setPeoples(peoples.map((obj) => 
@@ -91,25 +105,42 @@ function App() {
     }
   };
 
+  const [isFilterNewcomer, setIsFilterNewcomer] = useState(false);
+  const [boldBtnNewcomer, setBoldBtnNewcomer] = useState(null);
   const filterNewcomer = (e, filterString) => {
-    setIsFilter(!isFilter);
+    
+    // if clicking into filter
+    if(isFilterNewcomer) {
+      e.target.style.color = 'black'
+      e.target.style.fontWeight = 'bold'
+      setBoldBtnNewcomer(e.target);
+
+    } else if (boldBtnNewcomer!==null) {
+      boldBtnNewcomer.style.color = 'white'
+      boldBtnNewcomer.style.fontWeight = 'normal'
+
+      setBoldBtnNewcomer(null);
+    }
+
+
+    setIsFilterNewcomer(!isFilterNewcomer);
     const keyword = e.target.innerHTML;
 
-    if (isFilter && filterString === "N-H") {
+    if (isFilterNewcomer && filterString === "N-H") {
         setTasks(tasks.map((obj) => 
         (obj.hobby !== keyword) ?
         { ...obj, display : false }
         : {...obj, display : true }
         ))
 
-    } else if (isFilter && filterString === "N-L") {
+    } else if (isFilterNewcomer && filterString === "N-L") {
       setTasks(tasks.map((obj) => 
       (obj.language !== keyword) ?
       { ...obj, display : false }
       : {...obj, display : true }
       ))
   
-    } else if (isFilter && filterString === "N-A") {
+    } else if (isFilterNewcomer && filterString === "N-A") {
       switch(keyword) {
         case "&lt; 25":
           setTasks(tasks.map((obj) => 
@@ -170,12 +201,13 @@ function App() {
 
   return (
     <div value={{onPair: matchPair, filterLocals: filterLocal, filterNewcomer}} className="container">
-      <Header title='PoC - Matching (4.4.22)'/>
+      <Header title='PoC - Matching (4.21.22)'/>
     
       <FilterHeader 
         onPair={matchPair} 
         newLength={tasks.length} 
         oldLength={peoples.length}
+
         // filtering
         filterLocals={filterLocal}
         filterNewcomers={filterNewcomer}
