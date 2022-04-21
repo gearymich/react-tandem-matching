@@ -1,0 +1,67 @@
+[
+    {
+      "id": 0,
+      "display" : true,
+      "matched" : false,
+      "text": "Local 0",
+      "language": "Arabic",
+      "age": 21,
+      "hobby": "Football",
+      "family": "3 Children",
+      "address": "Lottumstraße, Berlin",
+      "available": "3 Hours",
+      "reminder": false
+    },
+    {
+      "id": 5,
+      "display" : true,
+      "matched" : false,
+      "text": "Local 2",
+      "language": "English",
+      "age": 38,
+      "hobby": "Drawing",
+      "family": "Husband",
+      "address": "Bergmanstraße, Berlin",
+      "available": "3 Hours",
+      "reminder": true
+    },
+    {
+      "id": 6,
+      "display" : true,
+      "matched" : false,
+      "text": "Local 3",
+      "language": "German",
+      "age": 33,
+      "hobby": "Hiking",
+      "family": "N/A",
+      "address": "Liebigstraße, Berlin",
+      "available": "2 Hours",
+      "reminder": false
+    },
+    {
+      "id": 7,
+      "display" : true,
+      "matched" : false,
+      "text": "Local 4",
+      "language": "Arabic",
+      "age": 28,
+      "hobby": "Traveling",
+      "family": "1 Child",
+      "address": "Brunnenstraße, Berlin",
+      "available": "2 Hours",
+      "reminder": false
+    },
+    {
+      "id": 8,
+      "display" : true,
+      "matched" : false,
+      "text": "Local 5",
+      "language": "English",
+      "age": 25,
+      "hobby": "Hiking",
+      "family": "N/A",
+      "address": "Brunnenstraße, Berlin",
+      "available": "4 Hours",
+      "reminder": false
+    }
+]

@@ -1,13 +1,12 @@
 import People from './People'
 
-const Peoples = ({peoples, onDelete, onToggle}) => {
+const Peoples = ({peoples, onToggle}) => {
   return (
     <>
-    {peoples.map((people) => (
+    {peoples.map((people) => (people.display === true && people.matched === false ) && (
         <People key={people.id} 
         people={people}
-        onToggle={onToggle}
-        onDelete={onDelete}/>
+        onToggle={onToggle}/>
     ))}
     </>
   )

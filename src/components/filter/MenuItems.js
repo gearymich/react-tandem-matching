@@ -1,11 +1,11 @@
 import { useState, useEffect, useRef } from "react";
-import filterLocals from "../people/filterPeople";
 import Button from "../iteractive/Button";
 import Dropdown from "./Dropdown";
 
-const MenuItems = ({ items, depthLevel, onPair, newcomerLength, oldtimerLength }) => {
+const MenuItems = ({ items, depthLevel, onPair, newcomerLength, oldtimerLength, filterLocals, filterNewcomers }) => {
 
   const [dropdown, setDropdown] = useState(false);
+  
   const ref = useRef();
 
   const onMouseEnter = () => {
@@ -16,9 +16,9 @@ const MenuItems = ({ items, depthLevel, onPair, newcomerLength, oldtimerLength }
     window.innerWidth > 960 && setDropdown(false);
   };
 
-  // const filterNewcomers = (type, filter) => {
-  //   console.log(type + ":  " + filter);
-  // }
+  const testFcn = () => {
+    onPair()
+  }
 
   return (
     
@@ -49,6 +49,10 @@ const MenuItems = ({ items, depthLevel, onPair, newcomerLength, oldtimerLength }
             depthLevel={depthLevel}
             submenus={items.submenu}
             dropdown={dropdown}
+
+            // filtering
+            filterLocals={filterLocals}
+            filterNewcomers={filterNewcomers}
           />
         </>
       ) : (
@@ -60,11 +64,19 @@ const MenuItems = ({ items, depthLevel, onPair, newcomerLength, oldtimerLength }
           </>
           ) : ( 
           <> 
-          <button onClick={ () => {
-            (items.ftype === "H") 
-              && filterLocals("H", "Hiking") ;
-            }}> {items.title} </button>
-          </>
+          <button onClick={ (e) => {
+            (items.ftype === "L-H")  && filterLocals(e, "L-H") ;
+            (items.ftype === "L-L")  && filterLocals(e, "L-L") ;
+            (items.ftype === "L-A")  && filterLocals(e, "L-A") ;
+
+
+            (items.ftype === "N-H")  && filterNewcomers(e, "N-H") ;
+            (items.ftype === "N-L")  && filterNewcomers(e, "N-L") ;
+            (items.ftype === "N-A")  && filterNewcomers(e, "N-A") ;
+
+            
+            }}>{items.title}</button> 
+            </>
           )
         }
         </>

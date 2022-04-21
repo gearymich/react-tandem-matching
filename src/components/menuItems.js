@@ -7,18 +7,23 @@ export const menuItems = [
           submenu: [
             {
               title: "Football",
+              ftype: "N-H",
             },
             {
               title: "Hiking",
+              ftype: "N-H",
             },
             {
               title: "Dancing",
+              ftype: "N-H",
             },
             {
               title: "Travelling",
+              ftype: "N-H",
             },
             {
               title: "Juggling",
+              ftype: "N-H",
             },
           ],
         },
@@ -27,12 +32,15 @@ export const menuItems = [
           submenu: [
             {
               title: "< 25",
+              ftype: "N-A",
             },
             {
               title: "25 - 35",
+              ftype: "N-A",
             },
             {
               title: "> 35",
+              ftype: "N-A",
             },
           ],
         },
@@ -41,15 +49,15 @@ export const menuItems = [
           submenu: [
             {
               title: "English",
-              ftype: "L",
+              ftype: "N-L",
             },
             {
               title: "German",
-              ftype: "L",
+              ftype: "N-L",
             },
             {
               title: "Arabic",
-              ftype: "L",
+              ftype: "N-L",
             },
           ],
         },
@@ -66,19 +74,23 @@ export const menuItems = [
           submenu: [
             {
               title: "Football",
+              ftype: "L-H",
             },
             {
               title: "Hiking",
-              ftype: "H",
+              ftype: "L-H",
             },
             {
               title: "Dancing",
+              ftype: "L-H",
             },
             {
-              title: "Travelling",
+              title: "Traveling",
+              ftype: "L-H",
             },
             {
               title: "Juggling",
+              ftype: "L-H",
             },
           ],
         },
@@ -87,12 +99,15 @@ export const menuItems = [
           submenu: [
             {
               title: "< 25",
+              ftype: "L-A",
             },
             {
               title: "25 - 35",
+              ftype: "L-A",
             },
             {
               title: "> 35",
+              ftype: "L-A",
             },
           ],
         },
@@ -101,12 +116,15 @@ export const menuItems = [
           submenu: [
             {
               title: "English",
+              ftype: "L-L",
             },
             {
               title: "German",
+              ftype: "L-L",
             },
             {
               title: "Arabic",
+              ftype: "L-L",
             },
           ],
         },

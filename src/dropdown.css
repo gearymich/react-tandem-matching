@@ -26,16 +26,18 @@
   position: relative;
 }
 
-/* .menu-items a {
+.menu-items a {
   display: block;
   font-size: inherit;
   color: inherit;
   text-decoration: none;
-} */
+}
 
-/* .menu-items a,
+.menu-items a,
 .menu-items button {
   color: white;
+  text-align: left;
+  padding: 0.7rem 1rem;
   display: block;
   font-size: inherit;
   text-decoration: none;
@@ -43,19 +45,7 @@
   background-color: #F397AF;
   cursor: pointer;
   width: 100%;
-} */
-
-.menu-items a,
-.menu-items button {
-  text-align: left;
-  padding: 0.7rem 1rem;
-}
-
-/* .menu-items a:hover,
-.menu-items button:hover {
-  background-color: #f2f2f2;
-}
-   */
+} 
 
 .arrow::after {
   content: "";
@@ -92,3 +82,7 @@
   left: 100%;
   top: -7px;
 }
+
+/* .filter-btn {
+  color: black;
+} */

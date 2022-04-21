@@ -3,27 +3,26 @@ import Checkbox from '../iteractive/Checkbox'
 import Button from '../iteractive/Button'
 import React, { useState } from 'react';
 
-const People = ({ people, onDelete, onToggle }) => {
+const People = ({ people, onToggle }) => {
+  
   const [btnText, setBtnText] = useState(true);
 
-  
   return (
     <div className='token' /* template literal*/ > 
       <div className='tleft'>
         <h3 style={{color: 'white'}}>
           {people.text} {' '}
         </h3>
-        <p style={{color: 'white'}}>Registered: {people.day}</p>
-        <p style={{color: 'white'}}>Age: {people.age} </p>
-        <p style={{color: 'white'}}>Hobbies: {people.hobby}</p>
+        <p>Language: {people.language}</p>
+        <p>Age: {people.age} yrs </p>
+        <p>Hobbies: {people.hobby}</p>
         {!btnText &&  // short version of ternary
         <> 
-          <p style={{color: 'white'}}>Family: {people.family}</p>
-          <p style={{color: 'white'}}>Address: {people.address}</p>
-          <p style={{color: 'white'}}>Availability: {people.available}</p>
-        </>
-         
-      }
+          <p>Family: {people.family}</p>
+          <p>Address: {people.address}</p>
+          <p>Availability: {people.available}</p>
+        </>        
+        }
       </div>
 
       <div className='tright' >
@@ -32,26 +31,21 @@ const People = ({ people, onDelete, onToggle }) => {
             id={people.id}
             toggle={people.reminder}
             onToggle={onToggle} />
-          </div>
+        </div>
           
         <div style={btnText ? { padding:'32px'} : {padding : '32px'}}/>
 
         {!btnText &&  // short version of ternary
-        <>
-        <div style={{padding:'20px'}}/> 
-        <Button
-          color='#F397AF'
-          text='Description'
-          // onClick={() => setBtnText(!btnText)}
-          />
-        </>
+          <>
+          <div style={{padding:'20px'}}/> 
+          <Button color='#F397AF' text='Description'/>
+          </>
         }
-        
+
         <div style={{verticalAlign: 'bottom'}}>
-        <Button
-          color='#E72658'
-          text={btnText ? 'More...' : 'Less...' }
-          onClick={() => setBtnText(!btnText)}
+          <Button color = '#E72658'
+            text={btnText ? 'More...' : 'Less...' }
+            onClick={() => setBtnText(!btnText)}
           />
         </div>
       </div>
