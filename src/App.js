@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import { createContext, useContext } from "react";
 import Header from './components/Header'
 import FilterHeader from './components/filter/FilterHeader'
 import Newcomers from './components/newcomers/Newcomers'
@@ -12,12 +11,12 @@ function App() {
   const LOCALS = require('./locals.json')
 
   const [newcomers, setTasks] = useState(NEWCOMERS)
-  const [peoples, setPeoples] = useState(LOCALS)
+  const [locals, setLocals] = useState(LOCALS)
 
   // Match pair
   const matchPair = () => {
     if(newcomers.some(newcomer => newcomer.reminder === true)
-      && peoples.some(people => people.reminder === true)) {      
+      && locals.some(locals => locals.reminder === true)) {      
         
         setTasks(newcomers.map((newcomer) => 
           (newcomer.reminder === true) ?      
@@ -25,10 +24,10 @@ function App() {
           : { ...newcomer, reminder: false }
         ))
 
-        setPeoples(peoples.map((people) => 
-          (people.reminder === true) ? 
-          { ...people, matched : true,  reminder: !people.reminder }
-          : { ...people, reminder: false }
+        setLocals(locals.map((locals) => 
+          (locals.reminder === true) ? 
+          { ...locals, matched : true,  reminder: !locals.reminder }
+          : { ...locals, reminder: false }
         ))
       }
   }
@@ -54,14 +53,14 @@ function App() {
 
     console.log('click');
     if (isFilterLocal && filterString === "L-H") {
-        setPeoples(peoples.map((obj) => 
+        setLocals(locals.map((obj) => 
         (obj.hobby !== keyword) ?
         { ...obj, display : false }
         : {...obj, display : true }
         ))
 
     } else if (isFilterLocal && filterString === "L-L") {
-      setPeoples(peoples.map((obj) => 
+      setLocals(locals.map((obj) => 
       (obj.language !== keyword) ?
       { ...obj, display : false }
       : {...obj, display : true }
@@ -70,21 +69,21 @@ function App() {
     } else if (isFilterLocal && filterString === "L-A") {
       switch(keyword) {
         case "&lt; 25":
-          setPeoples(peoples.map((obj) => 
+          setLocals(locals.map((obj) => 
           (obj.age >= 25) ?
           { ...obj, display : false }
           : {...obj, display : true }
           ))
           break;
         case "25 - 35":
-          setPeoples(peoples.map((obj) => 
+          setLocals(locals.map((obj) => 
           (obj.age < 25 || obj.age > 35) ?
           { ...obj, display : false }
           : {...obj, display : true }
           ))
           break;
         case "&gt; 35":
-          setPeoples(peoples.map((obj) => 
+          setLocals(locals.map((obj) => 
           (obj.age <= 35) ?
           { ...obj, display : false }
           : {...obj, display : true }
@@ -96,7 +95,7 @@ function App() {
       }
 
     } else {
-      setPeoples(peoples.map((obj) => 
+      setLocals(locals.map((obj) => 
       (true) &&
       { ...obj, display : true }
     ))
@@ -185,13 +184,13 @@ function App() {
     )
   }
 
-  // Toggle Reminder (People)
+  // Toggle Reminder (locals)
   const toggleReminderPpl = (id) => {
-    setPeoples(
-      peoples.map((people) => 
-        people.id === id ? 
-        { ...people, reminder: !people.reminder }
-        : { ...people, reminder: false }
+    setLocals(
+      locals.map((locals) => 
+        locals.id === id ? 
+        { ...locals, reminder: !locals.reminder }
+        : { ...locals, reminder: false }
       )
     )
   }
@@ -203,7 +202,7 @@ function App() {
       <FilterHeader 
         onPair={matchPair} 
         newLength={newcomers.length} 
-        oldLength={peoples.length}
+        oldLength={locals.length}
 
         // filtering
         filterLocals={filterLocal}
@@ -228,8 +227,8 @@ function App() {
         <div className="column" style={{width: '1%', background: '#F397AF'}}></div>
 
         <div className="column" style={{width: '49.5%'}}>
-          {peoples.length > 0 ? (
-            <Locals peoples={peoples} 
+          {locals.length > 0 ? (
+            <Locals locals={locals} 
             onToggle={toggleReminderPpl} />
           ) : (
             'No Locals To Show'

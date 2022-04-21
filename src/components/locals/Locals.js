@@ -4,7 +4,7 @@ const Locals = ({locals, onToggle}) => {
   return (
     <>
     {locals.map((local) => (local.display === true && local.matched === false ) && (
-        <People key={local.id} 
+        <Local key={local.id} 
         local={local}
         onToggle={onToggle}/>
     ))}
