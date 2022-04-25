@@ -237,7 +237,7 @@ function App() {
 
   return (
     <div value={{onPair: matchPair, filterLocals: filterLocal, filterNewcomer}} className="container">
-      <Header title='PoC - Matching (4.21.22)'/>
+      <Header title='PoC - Matching (4.25.22)'/>
     
       <FilterHeader 
         onPair={matchPair} 
@@ -258,7 +258,7 @@ function App() {
           }}
           type="text"
           id="header-search"
-          placeholder="Search: Newcomers"
+          placeholder="Suche: Einwander*innen (Name)"
           name="s" 
         />
         <input
@@ -269,7 +269,7 @@ function App() {
           }}
           type="text"
           id="header-search"
-          placeholder="Search: Locals"
+          placeholder="Suche: Local (Name)"
           name="s" 
         />
       </div>
@@ -280,7 +280,7 @@ function App() {
             <Newcomers newcomers={newcomers} 
             onToggle={toggleReminder}/>
           ) : (
-            'No Newcomers To Show'
+            'Keine Neuankömmlinge zu sehen'
           )}
         </div>
 
@@ -291,7 +291,7 @@ function App() {
             <Locals locals={locals} 
             onToggle={toggleReminderPpl} />
           ) : (
-            'No Locals To Show'
+            'Keine Einheimischen zu sehen'
           )}
         </div>
       </div>

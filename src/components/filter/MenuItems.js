@@ -36,9 +36,9 @@ const MenuItems = ({ items, depthLevel, onPair, newcomerLength, oldtimerLength, 
             aria-expanded={dropdown ? "true" : "false"}
           >
             {items.title}
-            {(depthLevel===0 && items.title==="NEWCOMERS")
+            {(depthLevel===0 && items.title==="EINWANDER*INNEN")
               && " ("+newcomerLength+")"}
-            {(depthLevel===0 && items.title==="LOCALS")
+            {(depthLevel===0 && items.title==="LOCAL")
               && " ("+oldtimerLength+")"}
 
             {" "}
@@ -59,7 +59,7 @@ const MenuItems = ({ items, depthLevel, onPair, newcomerLength, oldtimerLength, 
         <>
         {(depthLevel === 0) ? (
           <>
-          <Button className="btn" color='grey' text='Match Pair'
+          <Button className="btn" color='grey' text='Match!'
             onClick={ onPair } textsize='18px' />
           </>
           ) : ( 

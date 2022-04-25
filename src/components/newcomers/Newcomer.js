@@ -9,15 +9,15 @@ const Newcomer = ({ newcomer, onToggle }) => {
     <div className='token' /* template literal*/ > 
       <div className='tleft'>
         <h3 style={{color: 'white'}}>{newcomer.text} {' '}</h3>
-        <p>Language: {newcomer.language}</p>
-        <p>Age: {newcomer.age} yrs</p>
-        <p>Hobbies: {newcomer.hobby}</p>
+        <p>Sprache(n): {newcomer.language}</p>
+        <p>Alter: {newcomer.age} yrs</p>
+        <p>Hobbys: {newcomer.hobby}</p>
 
         {!btnText &&  // short version of ternary
           <> 
-            <p>Family: {newcomer.family}</p>
-            <p>Address: {newcomer.address}</p>
-            <p>Availability: {newcomer.available}</p>
+            <p>Familie: {newcomer.family}</p>
+            <p>Adresse: {newcomer.address}</p>
+            <p>Verfügbarkeit: {newcomer.available}</p>
           </>  
         }
       </div>
@@ -37,14 +37,14 @@ const Newcomer = ({ newcomer, onToggle }) => {
         <div style={{padding:'20px'}}/> 
         <Button
           color='#F397AF'
-          text='Description'
+          text='Beschreibung'
           />
         </>
         }
         
         <div style={{verticalAlign: 'bottom'}}>
         <Button color='#E72658'
-          text={btnText ? 'More...' : 'Less...' }
+          text={btnText ? 'Mehr...' : 'Weniger...' }
           onClick={() => setBtnText(!btnText)}
           />
         </div>

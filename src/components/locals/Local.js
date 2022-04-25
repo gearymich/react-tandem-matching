@@ -13,14 +13,14 @@ const Local = ({ local, onToggle }) => {
         <h3 style={{color: 'white'}}>
           {local.text} {' '}
         </h3>
-        <p>Language: {local.language}</p>
-        <p>Age: {local.age} yrs </p>
-        <p>Hobbies: {local.hobby}</p>
+        <p>Sprache(n): {local.language}</p>
+        <p>Alter: {local.age} yrs </p>
+        <p>Hobbys: {local.hobby}</p>
         {!btnText &&  // short version of ternary
         <> 
-          <p>Family: {local.family}</p>
-          <p>Address: {local.address}</p>
-          <p>Availability: {local.available}</p>
+          <p>Familie: {local.family}</p>
+          <p>Adresse: {local.address}</p>
+          <p>Verfügbarkeit: {local.available}</p>
         </>        
         }
       </div>
@@ -38,13 +38,13 @@ const Local = ({ local, onToggle }) => {
         {!btnText &&  // short version of ternary
           <>
           <div style={{padding:'20px'}}/> 
-          <Button color='#F397AF' text='Description'/>
+          <Button color='#F397AF' text='Beschreibung'/>
           </>
         }
 
         <div style={{verticalAlign: 'bottom'}}>
           <Button color = '#E72658'
-            text={btnText ? 'More...' : 'Less...' }
+            text={btnText ? 'Mehr...' : 'Weniger...' }
             onClick={() => setBtnText(!btnText)}
           />
         </div>

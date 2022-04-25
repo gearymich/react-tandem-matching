@@ -1,34 +1,34 @@
 export const menuItems = [
     {
-      title: "NEWCOMERS",
+      title: "EINWANDER*INNEN",
       submenu: [
         {
-          title: "Hobbies",
+          title: "Hobbys",
           submenu: [
             {
-              title: "Football",
+              title: "Fußball",
               ftype: "N-H",
             },
             {
-              title: "Hiking",
+              title: "Wandern",
               ftype: "N-H",
             },
             {
-              title: "Dancing",
+              title: "Tanzen",
               ftype: "N-H",
             },
             {
-              title: "Travelling",
+              title: "Unterwegs",
               ftype: "N-H",
             },
             {
-              title: "Juggling",
+              title: "Jonglieren",
               ftype: "N-H",
             },
           ],
         },
         {
-          title: "Age",
+          title: "Alter",
           submenu: [
             {
               title: "< 25",
@@ -45,18 +45,18 @@ export const menuItems = [
           ],
         },
         {
-          title: "Languages",
+          title: "Sprache(n)",
           submenu: [
             {
-              title: "English",
+              title: "Englisch",
               ftype: "N-L",
             },
             {
-              title: "German",
+              title: "Deutsch",
               ftype: "N-L",
             },
             {
-              title: "Arabic",
+              title: "Arabisch",
               ftype: "N-L",
             },
           ],
@@ -67,35 +67,35 @@ export const menuItems = [
       title: "Match",
     },
     {
-      title: "LOCALS",
+      title: "LOCAL",
       submenu: [
         {
-          title: "Hobbies",
+          title: "Hobbys",
           submenu: [
             {
-              title: "Football",
+              title: "Fußball",
               ftype: "L-H",
             },
             {
-              title: "Hiking",
+              title: "Wandern",
               ftype: "L-H",
             },
             {
-              title: "Dancing",
+              title: "Tanzen",
               ftype: "L-H",
             },
             {
-              title: "Traveling",
+              title: "Unterwegs",
               ftype: "L-H",
             },
             {
-              title: "Juggling",
+              title: "Jonglieren",
               ftype: "L-H",
             },
           ],
         },
         {
-          title: "Age",
+          title: "Alter",
           submenu: [
             {
               title: "< 25",
@@ -112,18 +112,18 @@ export const menuItems = [
           ],
         },
         {
-          title: "Languages",
+          title: "Sprache(n)",
           submenu: [
             {
-              title: "English",
+              title: "Englisch",
               ftype: "L-L",
             },
             {
-              title: "German",
+              title: "Deutsch",
               ftype: "L-L",
             },
             {
-              title: "Arabic",
+              title: "Arabisch",
               ftype: "L-L",
             },
           ],
