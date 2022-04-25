@@ -1,6 +1,7 @@
     [
         {
             "id": 1,
+            "sdisplay" : true,
             "display" : true,
             "matched" : false,
             "text": "Newcomer 6",
@@ -10,10 +11,11 @@
             "family": "Wife, 2 Children",
             "address": "Brunnenstraße, Berlin",
             "available": "2 Hours",
-            "reminder": true
+            "reminder": false
         },
         {
             "id": 2,
+            "sdisplay" : true,
             "display" : true,
             "matched" : false,
             "text": "Newcomer 8",
@@ -27,6 +29,7 @@
         },
         {
             "id": 3,
+            "sdisplay" : true,
             "display" : true,
             "matched" : false,
             "text": "Newcomer 30",
@@ -40,6 +43,7 @@
         },
         {
             "id": 77,
+            "sdisplay" : true,
             "display" : true,
             "matched" : false,
             "text": "Newcomer 11",
@@ -53,6 +57,7 @@
         },
         {
             "id": 101,
+            "sdisplay" : true,
             "display" : true,
             "matched" : false,
             "text": "Newcomer 999",

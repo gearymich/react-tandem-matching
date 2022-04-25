@@ -60,7 +60,7 @@ const MenuItems = ({ items, depthLevel, onPair, newcomerLength, oldtimerLength, 
         {(depthLevel === 0) ? (
           <>
           <Button className="btn" color='grey' text='Match Pair'
-            onClick={ onPair } textsize='18px'/>
+            onClick={ onPair } textsize='18px' />
           </>
           ) : ( 
           <> 

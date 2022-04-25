@@ -1,10 +1,8 @@
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import Header from './components/Header'
 import FilterHeader from './components/filter/FilterHeader'
 import Newcomers from './components/newcomers/Newcomers'
 import Locals from './components/locals/Locals'
-
-import { Searchbar } from 'react-native-paper';
 
 function App() {
   const NEWCOMERS = require('./newcomers.json')
@@ -104,8 +102,9 @@ function App() {
 
   const [isFilterNewcomer, setIsFilterNewcomer] = useState(false);
   const [boldBtnNewcomer, setBoldBtnNewcomer] = useState(null);
+
   const filterNewcomer = (e, filterString) => {
-    // if clicking into filter
+    // styling on filter btn
     if(isFilterNewcomer) {
       e.target.style.color = 'black'
       e.target.style.fontWeight = 'bold'
@@ -195,6 +194,47 @@ function App() {
     )
   }
 
+  // Search hooks
+  const searchNewcomer = useRef(null);
+  const searchLocal = useRef(null);
+
+  const searchNewcomerFcn = (val) => {
+    console.log(val);
+    // styling on filter btn
+    if(val !== '') {
+      setTasks(newcomers.map((obj) => 
+      (obj.text.toLowerCase().includes(val.toLowerCase())) ?
+      { ...obj, sdisplay : true }
+      : {...obj,sdisplay : false }
+      ))
+
+    } else {
+      setTasks(newcomers.map((obj) => 
+      (true) &&
+      { ...obj, sdisplay : true }
+    ))
+    }
+  }
+
+  const searchLocalFcn = (val) => {
+    console.log(val);
+    // styling on filter btn
+    if(val !== '') {
+      setLocals(locals.map((obj) => 
+      (obj.text.toLowerCase().includes(val.toLowerCase())) ?
+      { ...obj, sdisplay : true }
+      : {...obj,sdisplay : false }
+      ))
+
+    } else {
+      setLocals(locals.map((obj) => 
+      (true) &&
+      { ...obj, sdisplay : true }
+    ))
+    }
+  }
+
+
   return (
     <div value={{onPair: matchPair, filterLocals: filterLocal, filterNewcomer}} className="container">
       <Header title='PoC - Matching (4.21.22)'/>
@@ -210,8 +250,28 @@ function App() {
       />
 
       <div className='searchBoxes'>
-        <Searchbar className='search' placeholder="Newcomers"/>
-        <Searchbar className='search' placeholder="Locals"/>
+        <input
+          ref={searchNewcomer}
+          onInput={e => {
+            searchNewcomer.current.focus();            
+            searchNewcomerFcn(searchNewcomer.current.value);
+          }}
+          type="text"
+          id="header-search"
+          placeholder="Search: Newcomers"
+          name="s" 
+        />
+        <input
+          ref={searchLocal}
+          onInput={e => {
+            searchLocal.current.focus();            
+            searchLocalFcn(searchLocal.current.value);
+          }}
+          type="text"
+          id="header-search"
+          placeholder="Search: Locals"
+          name="s" 
+        />
       </div>
 
       <div className='body'>
