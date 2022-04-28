@@ -2,6 +2,8 @@ import { FaTimes } from 'react-icons/fa'
 import Checkbox from '../iteractive/Checkbox'
 import Button from '../iteractive/Button'
 import React, { useState } from 'react';
+import Description from '../iteractive/Description'
+
 
 const Local = ({ local, onToggle }) => {
   
@@ -38,7 +40,7 @@ const Local = ({ local, onToggle }) => {
         {!btnText &&  // short version of ternary
           <>
           <div style={{padding:'20px'}}/> 
-          <Button color='#F397AF' text='Beschreibung'/>
+          <Description/>
           </>
         }
 

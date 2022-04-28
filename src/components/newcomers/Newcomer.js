@@ -1,6 +1,7 @@
 import Checkbox from '../iteractive/Checkbox'
 import Button from '../iteractive/Button'
 import React, { useState } from 'react';
+import Description from '../iteractive/Description'
 
 const Newcomer = ({ newcomer, onToggle }) => {
   const [btnText, setBtnText] = useState(true);
@@ -35,10 +36,7 @@ const Newcomer = ({ newcomer, onToggle }) => {
         {!btnText &&  // short version of ternary
         <>
         <div style={{padding:'20px'}}/> 
-        <Button
-          color='#F397AF'
-          text='Beschreibung'
-          />
+        <Description/>
         </>
         }
         

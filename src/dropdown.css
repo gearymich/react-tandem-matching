@@ -47,6 +47,21 @@
   width: 100%;
 } 
 
+.menu-items .match-button {
+  color: #E72658;
+  background-color: white;
+  border: 2px solid #E72658;
+  font-size: 18px;
+  width: 200px;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.menu-items .match-button:hover {
+  background-color: #E72658;
+  color: white;
+}
+
 .arrow::after {
   content: "";
   display: inline-block;
@@ -82,7 +97,3 @@
   left: 100%;
   top: -7px;
 }
-
-/* .filter-btn {
-  color: black;
-} */
